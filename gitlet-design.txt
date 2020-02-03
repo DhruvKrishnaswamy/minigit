@@ -1,0 +1,73 @@
+Gitlet Design Document
+----------------------
+
+
+Classes and Data Structures
+---------------------------
+Classes to be created - 
+	- Main
+	- Commit 
+	- Gtree
+
+-Methods to be implemented within main 
+
+**Add**
+    - Adds a file to the staging area
+
+** rm **
+    -This removes the file j from the staging area.
+
+**Main**
+    - Deserializes gtree and makes it useable
+	- calls to various methods
+
+**Init**
+	- Creates a .gitlet repo if not already there
+	- Creates a staging area folder within a gitlet folder
+	- Creates an initial commit with certain fixed params by making a call to commit
+
+**Merge**
+
+**Reset**
+
+**Rm-branch**
+
+**Branch**
+
+**Status**
+
+**Find**
+
+**checkout**
+- This has 3 cases
+    - Case 1: Given a file name s, this overwrites its contents
+    - Case 2:
+
+**Global-log** 
+- This returns the log of all the commits made on every branch.
+**Log**
+- This returns the log of all the commits made on the current branch.
+**rm**
+
+
+- Methods & Data structures to be implemented within commit
+** Commit constructor**
+
+** different getter and setter methods to access and modify the variables **
+
+- Hashmap - This is the Hashmap associating the file name to its SHA-code
+- Arraylist - List of files associated with each commit.
+- Arraylist - TO keeps track of all files that will need to be removed on the next commit.
+
+
+
+Algorithms
+----------
+- Depth first search through the various commits in order to locate split point for merging
+
+Persistence
+-----------
+- In order to ensure persistence, I serialize my gtree using the save() method which is called after any
+ any method that significantly alters the gtree. Save() allows me to write the gtree to a file in the disk memory.
+ This, allows for persistence of the various commits made and information inputted. And allows us to continue working
+ on our data by deserializing the required gtree at the beginning of the main method.
